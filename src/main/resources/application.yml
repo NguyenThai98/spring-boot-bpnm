@@ -1,0 +1,42 @@
+camunda:
+  bpm:
+    enabled: true
+    history-level: NONE
+    default-serialization-format: application/json
+    auto-deployment-enabled: true
+    default-number-of-retries: 3
+    job-executor-acquire-by-priority: false
+    id-generator: strong
+    deployment-resource-pattern: classpath*:/bpmn/*.bpmn
+    job-execution:
+      enabled: true
+      core-pool-size: 3 # CPU cores * 1.5
+      lock-time-in-millis: 300000
+      max-jobs-per-acquisition: 6
+      max-pool-size: 12
+      queue-capacity: 24
+      wait-time-in-millis: 5
+      max-wait: 60000
+      backoff-time-in-millis: 0
+      max-backoff: 0
+    database:
+      schema-update: true
+      type: postgres
+      schema-name: ticket
+      table-prefix: ticket.
+      jdbc-batch-processing: true
+    eventing:
+      execution: true
+      history: true
+      task: true
+    jpa:
+      enabled: true
+      #      persistence-unit-name: comPU
+      close-entity-manager: true
+      handle-transaction: true
+    management:
+      health.camunda.enabled: false
+    metrics:
+      enabled: false
+    authorization:
+      enabled: false
