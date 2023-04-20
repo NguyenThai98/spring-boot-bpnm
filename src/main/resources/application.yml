@@ -1,3 +1,8 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:2345/dvdrental?currentSchema=bpnm"
+    username: "postgres"
+    password: "nguyenthai98"
 camunda:
   bpm:
     enabled: true
@@ -22,8 +27,8 @@ camunda:
     database:
       schema-update: true
       type: postgres
-      schema-name: ticket
-      table-prefix: ticket.
+      schema-name: bpnm
+      table-prefix: bpnm.
       jdbc-batch-processing: true
     eventing:
       execution: true
