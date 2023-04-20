@@ -12,24 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
-public class CamundaSpringBootApplication implements CommandLineRunner {
+public class CamundaSpringBootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CamundaSpringBootApplication.class, args);
 	}
-	@Autowired
-	private WorkFlowService service;
-	@Override
-	public void run(String... args) throws Exception {
-		Map<String,Object> vars = new HashMap<>();
-		vars.put(BpnmVariableContains.FINISHED, false);
-		if(args[0].equals("1")){
-			service.startProessByIdKey("OderHomestayProcess",vars );
-		}else{
-			service.takeCompleProcess(args[0], Map.of(BpnmVariableContains.FINISHED, true));
-		}
 
-
-
-	}
 }

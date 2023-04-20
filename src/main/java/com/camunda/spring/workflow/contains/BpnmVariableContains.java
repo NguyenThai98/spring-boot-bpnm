@@ -9,4 +9,6 @@ public final class BpnmVariableContains {
     public static String FINISHED = "finished";
     public static String ORDER = "order";
     public static String ASSIGNEE = "assignee";
+    public static String CURRENT_PROCESS_ID = "current_process_id";
+
 }
